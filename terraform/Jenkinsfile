@@ -19,6 +19,7 @@ pipeline {
 
     }   
     // build
+    stages{
         stage('print version') {
             steps {
                 sh """
@@ -28,7 +29,7 @@ pipeline {
             }
         }
         
-    
+    }
     // post build
     post { 
         always { 
