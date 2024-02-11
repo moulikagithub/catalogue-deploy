@@ -32,7 +32,7 @@ pipeline {
         stage('init') {
             steps {
                 sh """
-                    cd /terraform
+                    cd terraform
                     terraform init -backend-config=${params.environment}/backend.tf -reconfigure
                 """
             }
@@ -40,7 +40,7 @@ pipeline {
         stage('plan') {
             steps {
                 sh """
-                    cd /terraform
+                    cd terraform
                     terraform plan -var-file=${params.environment}/${params.environment}.tfvars -var="app_version=${params.version}"
                 """
             }
@@ -48,7 +48,7 @@ pipeline {
         stage('apply') {
             steps {
                 sh """
-                    cd /terraform
+                    cd terraform
                     terraform apply -var-file=${params.environment}/${params.environment}.tfvars -var="app_version=${params.version}" -auto-approve
                 """
             }
