@@ -22,7 +22,7 @@ variable "environment" {
 variable "zone_name" {
   default = "kalidindi.cloud"
 }
-variable "app_version" {
+variable app_version {
   
 }
 variable "iam_instance_profile" {
