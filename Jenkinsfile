@@ -4,10 +4,10 @@ pipeline {
             label 'agent-1'
         }      
     }
-    // environment { 
-    //         packageVersion = ''
-    //         nexusurl = '172.31.11.253:8081'
-    // }
+     environment { 
+             packageVersion = ''
+            // nexusurl = '172.31.11.253:8081'
+     }
    
     options {
                 timeout(time: 1, unit: 'HOURS')
