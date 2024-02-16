@@ -17,8 +17,8 @@ pipeline {
     parameters {
         string(name: 'version', defaultValue: '', description: 'What is version')
         string(name: 'environment', defaultValue: 'dev', description: 'What is environment?')
-        booleanParam(name: 'Destroy', defaultValue: 'false', description: 'What is Destroy?')
-        booleanParam(name: 'Create', defaultValue: 'false', description: 'What is Create?')
+        //booleanParam(name: 'Destroy', defaultValue: 'false', description: 'What is Destroy?')
+        //booleanParam(name: 'Create', defaultValue: 'false', description: 'What is Create?')
 
     }   
     // build
@@ -40,11 +40,11 @@ pipeline {
             }
         }
         stage('plan') {
-             when{
-                expression{
-                    params.Create
-                }
-            }
+             //when{
+                //expression{
+                    //params.Create
+                //}
+            //}
             steps {
                 sh """
                     cd terraform
@@ -53,11 +53,11 @@ pipeline {
             }
         }
         stage('apply') {
-             when{
-                expression{
-                    params.Create
-                }
-            }
+            // when{
+                //expression{
+                   // params.Create
+                //}
+            //}
             steps {
                 sh """
                     cd terraform
